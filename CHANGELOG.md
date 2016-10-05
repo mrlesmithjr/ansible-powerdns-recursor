@@ -1,5 +1,8 @@
 # Change Log
 
+## [3.7.3](https://github.com/mrlesmithjr/ansible-powerdns-recursor/tree/3.7.3) (2016-10-05)
+[Full Changelog](https://github.com/mrlesmithjr/ansible-powerdns-recursor/compare/3.7.2...3.7.3)
+
 ## [3.7.2](https://github.com/mrlesmithjr/ansible-powerdns-recursor/tree/3.7.2) (2016-10-05)
 [Full Changelog](https://github.com/mrlesmithjr/ansible-powerdns-recursor/compare/3.7.1...3.7.2)
 
