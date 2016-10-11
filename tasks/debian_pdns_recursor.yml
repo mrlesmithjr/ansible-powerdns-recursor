@@ -52,7 +52,7 @@
 
 - name: Adding PowerDNS Repo
   apt_repository:
-    repo: "deb [arch=amd64] http://repo.powerdns.com/ubuntu {{ ansible_distribution_release|lower }}-rec-40 main"
+    repo: "deb [arch=amd64] http://repo.powerdns.com/{{ ansible_distribution|lower }} {{ ansible_distribution_release|lower }}-rec-40 main"
     state: "present"
   when: pdns_recursor_version == "4.x"
 
