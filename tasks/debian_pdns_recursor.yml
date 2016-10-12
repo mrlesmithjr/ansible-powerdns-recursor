@@ -60,6 +60,7 @@
   apt:
     name: "{{ item }}"
     state: "latest"
+  ignore_errors: yes  # We do this in order to allow the service to not fail starting when initially starting on port 53
   with_items:
     - 'pdns-recursor'
   when: pdns_recursor_version == "4.x"
