@@ -46,7 +46,18 @@
     repo: "deb http://repo.powerdns.com/{{ ansible_distribution|lower }} {{ ansible_distribution_release|lower }}-rec-40 main"
     state: "present"
   become: true
-  when: pdns_recursor_version == "4.x"
+  when: >
+        ansible_lsb['id'] != "Raspbian" and
+        pdns_recursor_version == "4.x"
+
+- name: Adding PowerDNS Repo
+  apt_repository:
+    repo: "deb http://repo.powerdns.com/raspbian {{ ansible_distribution_release|lower }}-rec-40 main"
+    state: "present"
+  become: true
+  when: >
+        ansible_lsb['id'] == "Raspbian" and
+        pdns_recursor_version == "4.x"
 
 - name: Installing PowerDNS Recursor
   apt:
