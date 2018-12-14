@@ -33,9 +33,9 @@ env:
   # - distribution: debian
   #   init: /lib/systemd/systemd
   #   version: stretch
-  - distribution: debian
-    init: /lib/systemd/systemd
-    version: jessie
+  # - distribution: debian
+  #   init: /lib/systemd/systemd
+  #   version: jessie
 
 before_install:
   - "sudo pip install yamllint"
