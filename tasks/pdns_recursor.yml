@@ -12,7 +12,7 @@
     owner: root
     group: root
   become: true
-  notify: restart pdns recursor
+  notify: restart pdns_recursor
   register: pdns_recursor_configured_1
   when: >
         ansible_os_family == "Debian" or
@@ -26,7 +26,7 @@
     owner: root
     group: root
   become: true
-  notify: restart pdns recursor
+  notify: restart pdns_recursor
   register: pdns_recursor_configured_2
   when: >
         (ansible_os_family == "RedHat" and

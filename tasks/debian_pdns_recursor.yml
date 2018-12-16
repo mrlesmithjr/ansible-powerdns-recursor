@@ -10,7 +10,7 @@
     deb: "{{ pdns_recursor_download_url }}/deb/pdns-recursor_{{ pdns_recursor_version }}_amd64.deb"
     state: present
   become: true
-  notify: restart pdns recursor
+  notify: restart pdns_recursor
   when: >
         ansible_architecture == "x86_64" and
         pdns_recursor_version != "4.x"
@@ -20,7 +20,7 @@
     deb: "{{ pdns_recursor_download_url }}/deb/pdns-recursor_{{ pdns_recursor_version }}_i386.deb"
     state: present
   become: true
-  notify: restart pdns recursor
+  notify: restart pdns_recursor
   when: >
         ansible_architecture == "i386" and
         pdns_recursor_version != "4.x"
@@ -41,7 +41,7 @@
 
 - name: Adding PowerDNS Repo
   apt_repository:
-    repo: "deb http://repo.powerdns.com/{{ ansible_distribution|lower }} {{ ansible_distribution_release|lower }}-rec-41 main"
+    repo: "deb http://repo.powerdns.com/{{ ansible_distribution|lower }} {{ ansible_distribution_release|lower }}-rec-{{ pdns_recursor_short_version }} main"
     state: present
   become: true
   when: >
@@ -50,7 +50,7 @@
 
 - name: Adding PowerDNS Repo
   apt_repository:
-    repo: "deb http://repo.powerdns.com/raspbian {{ ansible_distribution_release|lower }}-rec-41 main"
+    repo: "deb http://repo.powerdns.com/raspbian {{ ansible_distribution_release|lower }}-rec-{{ pdns_recursor_short_version }} main"
     state: present
   become: true
   when: >
