@@ -1,7 +1,9 @@
 > [!CAUTION]
 > **This project is archived and no longer maintained.**
 > Archived: 2026-03-26
-> Reason: Low community usage; use ansible-powerdns-authoritative insteadRole Name
+> Reason: Low community usage; use ansible-powerdns-authoritative instead
+
+Role Name
 =========
 
 An [Ansible] role that installs/configures [PowerDNS] Recursor
